@@ -1,0 +1,10 @@
+<div class="is-valid form-group">
+  <label [id]="inputId">{{label}}</label>
+  <ng-content></ng-content>
+  <div *ngIf="showTip" class="valid-feedback">
+    {{validFeedback}}
+  </div>
+  <div *ngIf="showTip" class="invalid-feedback">
+    {{invalidFeedback}}
+  </div>
+</div>

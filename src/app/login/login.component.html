@@ -1,0 +1,19 @@
+<form [formGroup]="loginForm" novalidate>
+  <div class="form-row">
+    <div class="col-xl-6">
+      <clinic-input invalidFeedback="Usuário é obrigatório" validFeedback="Ok" label="Usuário" [showTip]="false">
+        <input type="text" class="form-control" formControlName="username" [class.is-valid]="isValid('username')"
+               [class.is-invalid]="isInvalid('username')"/>
+      </clinic-input>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="col-xl-6">
+      <clinic-input invalidFeedback="Senha é obrigatória" validFeedback="Ok" label="Senha" [showTip]="false">
+        <input type="password" class="form-control" formControlName="password" [class.is-valid]="isValid('password')"
+               [class.is-invalid]="isInvalid('password')"/>
+      </clinic-input>
+    </div>
+  </div>
+  <button class="btn btn-primary" style="" [disabled]="loginForm.invalid" (click)="login()">Entrar</button>
+</form>
